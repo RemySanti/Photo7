@@ -122,6 +122,46 @@ const Footer = ({ onAdminClick }) => {
 
           {/* Divider - Removed white line */}
 
+          {/* Service Areas Section */}
+          <div className="border-t border-white/10 pt-8 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+              {/* Family Photography */}
+              <div>
+                <h3 className="font-semibold text-white mb-3">Family Photography</h3>
+                <ul className="space-y-1 text-white/80">
+                  <li><a href="/family-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
+                  <li><a href="/family-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
+                  <li><a href="/family-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
+                  <li><a href="/family-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
+                  <li><a href="/family-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
+                </ul>
+              </div>
+
+              {/* Maternity & Newborn */}
+              <div>
+                <h3 className="font-semibold text-white mb-3">Maternity & Newborn</h3>
+                <ul className="space-y-1 text-white/80">
+                  <li><a href="/maternity-newborn-photographer/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
+                </ul>
+              </div>
+
+              {/* More Services */}
+              <div>
+                <h3 className="font-semibold text-white mb-3">More Services</h3>
+                <ul className="space-y-1 text-white/80">
+                  <li><a href="/senior-portraits/bethlehem-pa/" className="hover:text-white transition-colors">Senior Portraits</a></li>
+                  <li><a href="/engagement-photography/bethlehem-pa/" className="hover:text-white transition-colors">Engagement Photos</a></li>
+                  <li><a href="/mini-session-photography/bethlehem-pa/" className="hover:text-white transition-colors">Mini Sessions</a></li>
+                  <li><a href="/professional-headshots/bethlehem-pa/" className="hover:text-white transition-colors">Professional Headshots</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* Bottom Copyright */}
           <div className="text-center text-xs sm:text-sm text-white relative pt-4">
             <p className="mb-4 md:mb-0">Jinette Ramos, the best photographer in Allentown.</p>
