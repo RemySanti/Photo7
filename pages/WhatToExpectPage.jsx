@@ -1,11 +1,12 @@
 import React from 'react';
+import { getAssetPath } from '../utils.js';
 
 const WhatToExpectPage = () => {
   return (
     <div className="min-h-screen bg-[#f8f8f5] text-[#111]">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#111] to-[#1f1f1f] text-white">
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'url(/images/header.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url(${getAssetPath('images/header.png')})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         <div className="relative max-w-6xl mx-auto px-6 lg:px-10 py-24 space-y-10">
           <div className="space-y-6 max-w-3xl">
             <p className="text-xs uppercase tracking-[0.45em] text-white/60">The JRP Studio Experience</p>

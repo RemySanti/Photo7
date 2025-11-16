@@ -1,5 +1,6 @@
 import React from 'react';
 import { useScale } from './ScaleProvider';
+import { getAssetPath } from '../utils.js';
 
 const Footer = ({ onAdminClick }) => {
   const { scaleFactor } = useScale();
@@ -47,7 +48,7 @@ const Footer = ({ onAdminClick }) => {
       <footer 
         className="footer-animated-bg relative w-full py-12 px-8 text-white overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/footerbg.png)',
+          backgroundImage: `url(${getAssetPath('images/footerbg.png')})`,
           backgroundSize: '150%',
           backgroundPosition: '0% 0%',
           backgroundAttachment: 'scroll',
@@ -68,7 +69,7 @@ const Footer = ({ onAdminClick }) => {
             {/* Left - Made in America */}
             <div className="flex items-center gap-2 sm:gap-3 justify-self-center md:justify-self-start">
               <img 
-                src="/images/american-flag.svg" 
+                src={getAssetPath('images/american-flag.svg')}
                 alt="US Flag" 
                 className="w-4 h-2.5 sm:w-5 sm:h-3 object-contain"
                 style={{ imageRendering: 'high-quality' }}
@@ -84,8 +85,8 @@ const Footer = ({ onAdminClick }) => {
             {/* Center - Social Icons */}
             <div className="flex justify-center gap-5 justify-self-center w-full" style={{ gap: '20px' }}>
               {[
-                { href: 'https://instagram.com', src: '/images/instagram.png', alt: 'Instagram' },
-                { href: 'https://facebook.com', src: '/images/facebook.png', alt: 'Facebook' },
+                { href: 'https://instagram.com', src: getAssetPath('images/instagram.png'), alt: 'Instagram' },
+                { href: 'https://facebook.com', src: getAssetPath('images/facebook.png'), alt: 'Facebook' },
               ].map((icon) => (
                 <a
                   key={icon.alt}

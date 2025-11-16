@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetPath } from '../utils.js';
 
 const StudioPage = () => {
   const amenities = [
@@ -37,7 +38,7 @@ const StudioPage = () => {
               <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-white">
                 <div className="relative h-96 overflow-hidden">
                   <img
-                    src="/images/Pictures/DSC00207.jpg"
+                    src={getAssetPath('images/Pictures/DSC00207.jpg')}
                     alt="Main studio"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -56,7 +57,7 @@ const StudioPage = () => {
               <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-white">
                 <div className="relative h-96 overflow-hidden">
                   <img
-                    src="/images/Pictures/DSC00790.jpg"
+                    src={getAssetPath('images/Pictures/DSC00790.jpg')}
                     alt="Natural light studio"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

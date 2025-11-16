@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetPath } from '../utils.js';
 
 const AboutPage = () => {
   return (
@@ -84,7 +85,7 @@ const AboutPage = () => {
 
       {/* Allentown Focus */}
       <section className="relative py-20 px-8 text-white overflow-hidden" style={{ background: 'linear-gradient(135deg, #111 0%, #1f2933 50%, #0f172a 100%)' }}>
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'url(/images/header.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url(${getAssetPath('images/header.png')})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         <div className="max-w-6xl mx-auto relative z-10 space-y-8">
           <div className="text-center space-y-6">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">Allentown, Pennsylvania</p>

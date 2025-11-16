@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getAssetPath } from '../utils.js';
 
 const ContactPage = () => {
   const [status, setStatus] = useState('');
@@ -164,7 +165,7 @@ const ContactPage = () => {
               <p className="text-xl font-bold text-black flex items-center gap-2 justify-center">
                 Allentown, Pennsylvania<br />
                 <img 
-                  src="/images/american-flag.svg" 
+                  src={getAssetPath('images/american-flag.svg')}
                   alt="US Flag" 
                   className="w-6 h-4 object-contain inline-block"
                   style={{ imageRendering: 'high-quality' }}
