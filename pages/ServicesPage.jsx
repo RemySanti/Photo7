@@ -1,5 +1,6 @@
 import React from 'react';
 import { GALLERY_PHOTOS } from '../constants.js';
+import { getAssetPath } from '../utils.js';
 
 const ServicesPage = () => {
   const services = [
@@ -87,7 +88,7 @@ const ServicesPage = () => {
           <div className="relative">
             <div className="overflow-hidden rounded-[32px] bg-gray-100 p-1 shadow-2xl">
               <img
-                src={GALLERY_PHOTOS[0].fullSize || GALLERY_PHOTOS[0].src || GALLERY_PHOTOS[0].thumbnail}
+                src={getAssetPath(GALLERY_PHOTOS[0].fullSize || GALLERY_PHOTOS[0].src || GALLERY_PHOTOS[0].thumbnail)}
                 alt="Service highlight"
                 className="h-full w-full rounded-[30px] object-cover"
               />
@@ -177,7 +178,7 @@ const ServicesPage = () => {
               {featuredWork.map((photo) => (
                 <div key={photo.id} className="relative overflow-hidden rounded-[26px] border border-gray-200 shadow-sm">
                   <img
-                    src={photo.src || photo.thumbnail}
+                    src={getAssetPath(photo.src || photo.thumbnail)}
                     alt={photo.title}
                     className="h-64 w-full object-cover"
                   />

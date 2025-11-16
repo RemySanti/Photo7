@@ -72,9 +72,9 @@ const ImageDetailPage = ({ photoId, onBack, onNavigate }) => {
           {/* Left Side - Image */}
           <div className="order-2 lg:order-1">
             <div className="sticky top-24">
-              <img
-                src={photo.src}
-                alt={photo.title || `Photography by Jinette Ramos - ${photo.category || 'Gallery'}`}
+                            <img
+                src={getAssetPath(photo.src)}
+                alt={photo.title}
                 className="w-full h-auto object-contain rounded-lg shadow-lg"
                 loading="eager"
                 decoding="async"

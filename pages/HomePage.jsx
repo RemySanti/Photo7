@@ -100,7 +100,7 @@ const HomePage = () => {
           {/* Right Side - Text Content */}
           <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-black flex items-center gap-2 sm:gap-4 flex-wrap">
-            <span>Jinette Ramos: The best photographer in Allen Town, USA. Capturing Moments</span>
+            <span>Jinette Ramos: The best photographer in Allentown, USA. Capturing Moments</span>
           </h1>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
               Hi, I'm Jinette Ramos, a portrait photographer, faith-filled creative, and proud mom of seven. I specialize in capturing families, expecting moms, newborns, couples, and seniors with a warm, timeless touch and a hint of editorial elegance. My passion for photography is rooted in my faith and fueled by connection, joy, and storytelling. Every session is a reflection of love, purpose, and the beauty of who you are.
@@ -177,7 +177,7 @@ const HomePage = () => {
               <article key={photo.id} className="group rounded-3xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={photo.src || photo.thumbnail}
+                    src={getAssetPath(photo.src || photo.thumbnail)}
                     alt={photo.title}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

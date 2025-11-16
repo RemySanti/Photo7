@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GALLERY_PHOTOS, GALLERY_CATEGORIES } from '../constants';
 import PageWrapper from '../components/PageWrapper';
+import { getAssetPath } from '../utils.js';
 
 const PhotographyPage = ({ onImageClick, isAdmin = false }) => {
   // Filter categories to only show those that have photos, and remove empty ones
@@ -84,7 +85,7 @@ const PhotographyPage = ({ onImageClick, isAdmin = false }) => {
               <div className="absolute inset-0 border-2 border-black/30 z-20 pointer-events-none"></div>
               
               <img 
-                src={photo.thumbnail || photo.src} 
+                src={getAssetPath(photo.thumbnail || photo.src)}
                 alt={photo.title || `Photography by Jinette Ramos - ${photo.category}`}
                 loading="lazy"
                 decoding="async"
