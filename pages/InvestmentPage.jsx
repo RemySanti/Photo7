@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FAQ_DATA } from '../constants';
 import PageWrapper from '../components/PageWrapper';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageWrapper from '../components/PageWrapper.jsx';
 
 const Section = ({ title, children, image, reverse = false }) => (

@@ -15,6 +15,7 @@ import PricingPage from './pages/PricingPage';
 import WhatToExpectPage from './pages/WhatToExpectPage';
 import ImageDetailPage from './pages/ImageDetailPage';
 import ServicesPage from './pages/ServicesPage';
+import SEOLandingPage from './pages/SEOLandingPage';
 import Footer from './components/Footer';
 import AdminLogin from './components/AdminLogin';
 import AdminPanel from './components/AdminPanel';
@@ -320,12 +321,12 @@ const AppContent = () => {
           <Route path="/faq-policy" element={<FAQAndPolicyPage />} />
           <Route path="/image/:photoId" element={<ImageDetailPage />} />
           {/* SEO Landing Pages - Dynamic Routes */}
-          <Route path="/family-photography/:city" element={<div>SEO Landing Page - Family Photography</div>} />
-          <Route path="/maternity-newborn-photographer/:city" element={<div>SEO Landing Page - Maternity & Newborn</div>} />
-          <Route path="/senior-portraits/:city" element={<div>SEO Landing Page - Senior Portraits</div>} />
-          <Route path="/engagement-photography/:city" element={<div>SEO Landing Page - Engagement & Couples</div>} />
-          <Route path="/mini-session-photography/:city" element={<div>SEO Landing Page - Mini Sessions</div>} />
-          <Route path="/professional-headshots/:city" element={<div>SEO Landing Page - Professional Headshots</div>} />
+          <Route path="/family-photography/:city" element={<SEOLandingPage serviceType="family-photography" />} />
+          <Route path="/maternity-newborn-photographer/:city" element={<SEOLandingPage serviceType="maternity-newborn-photographer" />} />
+          <Route path="/senior-portraits/:city" element={<SEOLandingPage serviceType="senior-portraits" />} />
+          <Route path="/engagement-photography/:city" element={<SEOLandingPage serviceType="engagement-photography" />} />
+          <Route path="/mini-session-photography/:city" element={<SEOLandingPage serviceType="mini-session-photography" />} />
+          <Route path="/professional-headshots/:city" element={<SEOLandingPage serviceType="professional-headshots" />} />
         </Routes>
       </main>
 
