@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useScale } from './ScaleProvider';
 import { getAssetPath } from '../utils.js';
 
@@ -129,16 +130,16 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Family Photography</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/family-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/family-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/family-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/family-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/family-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
-                  <li><a href="/family-photography/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/family-photography/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</a></li>
-                  <li><a href="/family-photography/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</a></li>
-                  <li><a href="/family-photography/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
-                  <li><a href="/family-photography/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</a></li>
+                  <li><Link to="/family-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</Link></li>
+                  <li><Link to="/family-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</Link></li>
+                  <li><Link to="/family-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</Link></li>
+                  <li><Link to="/family-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</Link></li>
+                  <li><Link to="/family-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</Link></li>
+                  <li><Link to="/family-photography/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</Link></li>
+                  <li><Link to="/family-photography/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</Link></li>
+                  <li><Link to="/family-photography/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</Link></li>
+                  <li><Link to="/family-photography/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</Link></li>
+                  <li><Link to="/family-photography/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</Link></li>
                 </ul>
               </div>
 
@@ -146,16 +147,16 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Maternity & Newborn</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/maternity-newborn-photographer/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</a></li>
-                  <li><a href="/maternity-newborn-photographer/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</a></li>
+                  <li><Link to="/maternity-newborn-photographer/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/easton-pa/" className="hover:text-white transition-colors">Easton, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</Link></li>
+                  <li><Link to="/maternity-newborn-photographer/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</Link></li>
                 </ul>
               </div>
 
@@ -163,16 +164,16 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Senior Portraits</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/senior-portraits/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/senior-portraits/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/senior-portraits/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/senior-portraits/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/senior-portraits/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
-                  <li><a href="/senior-portraits/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/senior-portraits/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</a></li>
-                  <li><a href="/senior-portraits/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</a></li>
-                  <li><a href="/senior-portraits/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
-                  <li><a href="/senior-portraits/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</a></li>
+                  <li><Link to="/senior-portraits/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</Link></li>
+                  <li><Link to="/senior-portraits/easton-pa/" className="hover:text-white transition-colors">Easton, PA</Link></li>
+                  <li><Link to="/senior-portraits/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</Link></li>
+                  <li><Link to="/senior-portraits/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</Link></li>
+                  <li><Link to="/senior-portraits/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</Link></li>
+                  <li><Link to="/senior-portraits/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</Link></li>
+                  <li><Link to="/senior-portraits/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</Link></li>
+                  <li><Link to="/senior-portraits/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</Link></li>
+                  <li><Link to="/senior-portraits/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</Link></li>
+                  <li><Link to="/senior-portraits/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</Link></li>
                 </ul>
               </div>
             </div>
@@ -183,16 +184,16 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Engagement Photos</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/engagement-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/engagement-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/engagement-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/engagement-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/engagement-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
-                  <li><a href="/engagement-photography/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/engagement-photography/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</a></li>
-                  <li><a href="/engagement-photography/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</a></li>
-                  <li><a href="/engagement-photography/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
-                  <li><a href="/engagement-photography/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</a></li>
+                  <li><Link to="/engagement-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</Link></li>
+                  <li><Link to="/engagement-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</Link></li>
+                  <li><Link to="/engagement-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</Link></li>
+                  <li><Link to="/engagement-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</Link></li>
+                  <li><Link to="/engagement-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</Link></li>
+                  <li><Link to="/engagement-photography/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</Link></li>
+                  <li><Link to="/engagement-photography/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</Link></li>
+                  <li><Link to="/engagement-photography/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</Link></li>
+                  <li><Link to="/engagement-photography/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</Link></li>
+                  <li><Link to="/engagement-photography/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</Link></li>
                 </ul>
               </div>
 
@@ -200,16 +201,16 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Mini Sessions</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/mini-session-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/mini-session-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/mini-session-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/mini-session-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/mini-session-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
-                  <li><a href="/mini-session-photography/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/mini-session-photography/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</a></li>
-                  <li><a href="/mini-session-photography/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</a></li>
-                  <li><a href="/mini-session-photography/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
-                  <li><a href="/mini-session-photography/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</a></li>
+                  <li><Link to="/mini-session-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</Link></li>
+                  <li><Link to="/mini-session-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</Link></li>
+                  <li><Link to="/mini-session-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</Link></li>
+                  <li><Link to="/mini-session-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</Link></li>
+                  <li><Link to="/mini-session-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</Link></li>
+                  <li><Link to="/mini-session-photography/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</Link></li>
+                  <li><Link to="/mini-session-photography/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</Link></li>
+                  <li><Link to="/mini-session-photography/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</Link></li>
+                  <li><Link to="/mini-session-photography/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</Link></li>
+                  <li><Link to="/mini-session-photography/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</Link></li>
                 </ul>
               </div>
 
@@ -217,16 +218,16 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Professional Headshots</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/professional-headshots/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/professional-headshots/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/professional-headshots/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/professional-headshots/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/professional-headshots/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
-                  <li><a href="/professional-headshots/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/professional-headshots/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</a></li>
-                  <li><a href="/professional-headshots/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</a></li>
-                  <li><a href="/professional-headshots/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
-                  <li><a href="/professional-headshots/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</a></li>
+                  <li><Link to="/professional-headshots/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</Link></li>
+                  <li><Link to="/professional-headshots/easton-pa/" className="hover:text-white transition-colors">Easton, PA</Link></li>
+                  <li><Link to="/professional-headshots/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</Link></li>
+                  <li><Link to="/professional-headshots/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</Link></li>
+                  <li><Link to="/professional-headshots/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</Link></li>
+                  <li><Link to="/professional-headshots/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</Link></li>
+                  <li><Link to="/professional-headshots/quakertown-pa/" className="hover:text-white transition-colors">Quakertown, PA</Link></li>
+                  <li><Link to="/professional-headshots/phillipsburg-nj/" className="hover:text-white transition-colors">Phillipsburg, NJ</Link></li>
+                  <li><Link to="/professional-headshots/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</Link></li>
+                  <li><Link to="/professional-headshots/coopersburg-pa/" className="hover:text-white transition-colors">Coopersburg, PA</Link></li>
                 </ul>
               </div>
             </div>

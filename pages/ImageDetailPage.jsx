@@ -1,13 +1,26 @@
 import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { GALLERY_PHOTOS } from '../constants';
+import { getAssetPath } from '../utils.js';
 
-const ImageDetailPage = ({ photoId, onBack, onNavigate }) => {
+const ImageDetailPage = () => {
+  const { photoId } = useParams();
+  const navigate = useNavigate();
+  
   // Handle both string and number photoId
   const photoIdNum = typeof photoId === 'string' ? parseInt(photoId, 10) : photoId;
   const photo = GALLERY_PHOTOS.find((p) => p.id === photoIdNum);
   const currentIndex = GALLERY_PHOTOS.findIndex((p) => p.id === photoIdNum);
   const previousPhoto = currentIndex > 0 ? GALLERY_PHOTOS[currentIndex - 1] : null;
   const nextPhoto = currentIndex < GALLERY_PHOTOS.length - 1 ? GALLERY_PHOTOS[currentIndex + 1] : null;
+
+  const handleBack = () => {
+    navigate('/gallery');
+  };
+
+  const handleNavigate = (newPhotoId) => {
+    navigate(`/image/${newPhotoId}`);
+  };
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -19,23 +32,23 @@ const ImageDetailPage = ({ photoId, onBack, onNavigate }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        onBack();
+        handleBack();
       } else if (e.key === 'ArrowLeft' && previousPhoto) {
-        onNavigate(previousPhoto.id);
+        handleNavigate(previousPhoto.id);
       } else if (e.key === 'ArrowRight' && nextPhoto) {
-        onNavigate(nextPhoto.id);
+        handleNavigate(nextPhoto.id);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [previousPhoto, nextPhoto, onBack, onNavigate]);
+  }, [previousPhoto, nextPhoto]);
 
   if (!photo) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Image not found</h1>
-          <button onClick={onBack} className="text-blue-600 hover:underline">
+          <button onClick={handleBack} className="text-blue-600 hover:underline">
             Back to Gallery
           </button>
         </div>
@@ -50,7 +63,7 @@ const ImageDetailPage = ({ photoId, onBack, onNavigate }) => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <button
-              onClick={onBack}
+              onClick={handleBack}
               aria-label="Back to gallery"
               className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
             >
@@ -158,7 +171,7 @@ const ImageDetailPage = ({ photoId, onBack, onNavigate }) => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <button
-              onClick={() => previousPhoto && onNavigate(previousPhoto.id)}
+              onClick={() => previousPhoto && handleNavigate(previousPhoto.id)}
               disabled={!previousPhoto}
               className={`flex items-center gap-2 font-medium transition-colors ${
                 previousPhoto
@@ -177,7 +190,7 @@ const ImageDetailPage = ({ photoId, onBack, onNavigate }) => {
             </div>
 
             <button
-              onClick={() => nextPhoto && onNavigate(nextPhoto.id)}
+              onClick={() => nextPhoto && handleNavigate(nextPhoto.id)}
               disabled={!nextPhoto}
               className={`flex items-center gap-2 font-medium transition-colors ${
                 nextPhoto

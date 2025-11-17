@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import PhotographyPage from './pages/PhotographyPage';
 import AboutPage from './pages/AboutPage';
@@ -14,6 +15,7 @@ import PricingPage from './pages/PricingPage';
 import WhatToExpectPage from './pages/WhatToExpectPage';
 import ImageDetailPage from './pages/ImageDetailPage';
 import ServicesPage from './pages/ServicesPage';
+import SEOLandingPage from './pages/SEOLandingPage';
 import Footer from './components/Footer';
 import AdminLogin from './components/AdminLogin';
 import AdminPanel from './components/AdminPanel';
@@ -93,30 +95,32 @@ const icons = {
 };
 
 const navItems = [
-  { icon: null, label: 'Home' },
-  { icon: icons.gallery, label: 'Gallery' },
-  { icon: null, label: 'Services' },
-  { icon: null, label: 'About' },
-  { icon: icons.phone, label: 'Contact' },
-  { icon: null, label: 'The Studio' },
-  { icon: null, label: 'Blog' },
-  { icon: icons.dollar, label: 'Pricing' },
-  { icon: null, label: 'What to Expect' },
-  { icon: null, label: 'FAQ & Policy' },
+  { icon: null, label: 'Home', path: '/' },
+  { icon: icons.gallery, label: 'Gallery', path: '/gallery' },
+  { icon: null, label: 'Services', path: '/services' },
+  { icon: null, label: 'About', path: '/about' },
+  { icon: icons.phone, label: 'Contact', path: '/contact' },
+  { icon: null, label: 'The Studio', path: '/studio' },
+  { icon: null, label: 'Blog', path: '/blog' },
+  { icon: icons.dollar, label: 'Pricing', path: '/pricing' },
+  { icon: null, label: 'What to Expect', path: '/what-to-expect' },
+  { icon: null, label: 'FAQ & Policy', path: '/faq-policy' },
 ];
 
 const AppContent = () => {
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
-  const [activePage, setActivePage] = useState('Home');
-  const [selectedImageId, setSelectedImageId] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const { scaleFactor } = useScale();
+  const location = useLocation();
+
+  // Check if we're on an image detail page
+  const isImageDetailPage = location.pathname.startsWith('/image/');
 
   return (
       <div className="flex flex-col min-h-screen bg-white text-gray-800 container-gradient">
       {/* Topbar Header - Hidden on image detail page */}
-      {!selectedImageId && (
+      {!isImageDetailPage && (
       <header className="header w-full shadow-sm" style={{ 
         height: isAdmin ? '282px' : 'auto', 
         minHeight: isAdmin ? '282px' : 'auto',
@@ -226,14 +230,14 @@ const AppContent = () => {
                 }}
               />
               
-              {navItems.map(({ icon, label }) => {
-                const isActive = activePage === label;
+              {navItems.map(({ icon, label, path }) => {
+                const isActive = location.pathname === path;
                 return (
-                  <button
+                  <Link
                     key={label}
+                    to={path}
                     aria-label={`Navigate to ${label} page`}
                     aria-current={isActive ? 'page' : undefined}
-                    onClick={() => setActivePage(label)}
                     className={`group relative px-3 md:px-5 py-2 md:py-2.5 rounded-xl font-medium text-xs md:text-sm transition-all duration-300 ease-out ${
                       isActive
                         ? 'text-black'
@@ -290,7 +294,7 @@ const AppContent = () => {
                       />
                     )}
                     <span className="relative z-10 font-semibold tracking-wide whitespace-nowrap">{label}</span>
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -304,40 +308,30 @@ const AppContent = () => {
 
       {/* Main Content */}
       <main className="flex-1">
-        {selectedImageId ? (
-          <ImageDetailPage
-            photoId={selectedImageId}
-            onBack={() => {
-              setSelectedImageId(null);
-              setActivePage('Gallery');
-            }}
-            onNavigate={(photoId) => setSelectedImageId(photoId)}
-          />
-        ) : (
-          <>
-        {activePage === 'Home' && <HomePage />}
-            {activePage === 'Gallery' && (
-              <PhotographyPage
-                onImageClick={(photoId) => {
-                  setSelectedImageId(photoId);
-                }}
-                isAdmin={isAdmin}
-              />
-            )}
-            {activePage === 'Services' && <ServicesPage />}
-        {activePage === 'About' && <AboutPage />}
-        {activePage === 'Contact' && <ContactPage />}
-        {activePage === 'The Studio' && <StudioPage />}
-            {activePage === 'Blog' && <BlogPage isAdmin={isAdmin} />}
-        {activePage === 'Pricing' && <PricingPage />}
-        {activePage === 'What to Expect' && <WhatToExpectPage />}
-        {activePage === 'FAQ & Policy' && <FAQAndPolicyPage />}
-          </>
-        )}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<PhotographyPage isAdmin={isAdmin} />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/studio" element={<StudioPage />} />
+          <Route path="/blog" element={<BlogPage isAdmin={isAdmin} />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/what-to-expect" element={<WhatToExpectPage />} />
+          <Route path="/faq-policy" element={<FAQAndPolicyPage />} />
+          <Route path="/image/:photoId" element={<ImageDetailPage />} />
+          {/* SEO Landing Pages - Dynamic Routes */}
+          <Route path="/family-photography/:city" element={<SEOLandingPage serviceType="family-photography" />} />
+          <Route path="/maternity-newborn-photographer/:city" element={<SEOLandingPage serviceType="maternity-newborn-photographer" />} />
+          <Route path="/senior-portraits/:city" element={<SEOLandingPage serviceType="senior-portraits" />} />
+          <Route path="/engagement-photography/:city" element={<SEOLandingPage serviceType="engagement-photography" />} />
+          <Route path="/mini-session-photography/:city" element={<SEOLandingPage serviceType="mini-session-photography" />} />
+          <Route path="/professional-headshots/:city" element={<SEOLandingPage serviceType="professional-headshots" />} />
+        </Routes>
       </main>
 
       {/* Footer - Hidden on image detail page */}
-      {!selectedImageId && <Footer onAdminClick={() => setShowAdminLogin(true)} />}
+      {!isImageDetailPage && <Footer onAdminClick={() => setShowAdminLogin(true)} />}
 
       {/* Admin Login Modal */}
       {showAdminLogin && (
