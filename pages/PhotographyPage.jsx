@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { GALLERY_PHOTOS, GALLERY_CATEGORIES } from '../constants';
 import PageWrapper from '../components/PageWrapper';
 import { getAssetPath } from '../utils.js';
 
-const PhotographyPage = ({ onImageClick, isAdmin = false }) => {
+const PhotographyPage = ({ isAdmin = false }) => {
+  const navigate = useNavigate();
   // Filter categories to only show those that have photos, and remove empty ones
   const availableCategories = GALLERY_CATEGORIES.filter(category => {
     if (category === 'All') return true;
@@ -18,9 +20,7 @@ const PhotographyPage = ({ onImageClick, isAdmin = false }) => {
     : GALLERY_PHOTOS.filter((photo) => photo.category === selectedCategory);
 
   const handleImageClick = (photoId) => {
-    if (onImageClick) {
-      onImageClick(photoId);
-    }
+    navigate(`/image/${photoId}`);
   };
 
   return (
