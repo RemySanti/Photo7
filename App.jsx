@@ -14,6 +14,7 @@ import PricingPage from './pages/PricingPage';
 import WhatToExpectPage from './pages/WhatToExpectPage';
 import ImageDetailPage from './pages/ImageDetailPage';
 import ServicesPage from './pages/ServicesPage';
+import SEOLocationPage from './pages/SEOLocationPage';
 import Footer from './components/Footer';
 import AdminLogin from './components/AdminLogin';
 import AdminPanel from './components/AdminPanel';
@@ -315,6 +316,15 @@ const AppContent = () => {
           />
         ) : (
           <>
+        {(() => {
+              // Check if activePage is an SEO location page
+              const seoMatch = activePage.match(/^(family-photography|maternity-newborn-photographer|senior-portraits|engagement-photography|mini-session|headshots)-(.+)$/);
+              if (seoMatch) {
+                const [, service, city] = seoMatch;
+                return <SEOLocationPage service={service} city={city} />;
+              }
+              return null;
+            })()}
         {activePage === 'Home' && <HomePage />}
             {activePage === 'Gallery' && (
               <PhotographyPage
@@ -337,7 +347,7 @@ const AppContent = () => {
       </main>
 
       {/* Footer - Hidden on image detail page */}
-      {!selectedImageId && <Footer onAdminClick={() => setShowAdminLogin(true)} />}
+      {!selectedImageId && <Footer onAdminClick={() => setShowAdminLogin(true)} onNavigate={setActivePage} />}
 
       {/* Admin Login Modal */}
       {showAdminLogin && (

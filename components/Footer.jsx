@@ -2,8 +2,19 @@ import React from 'react';
 import { useScale } from './ScaleProvider';
 import { getAssetPath } from '../utils.js';
 
-const Footer = ({ onAdminClick }) => {
+const Footer = ({ onAdminClick, onNavigate }) => {
   const { scaleFactor } = useScale();
+  
+  // Helper function to handle SEO page navigation
+  const handleSEOClick = (e, path) => {
+    e.preventDefault();
+    // Extract service and city from path like "/family-photography/bethlehem-pa/"
+    const match = path.match(/^\/(.+)-(.+)\/$/);
+    if (match && onNavigate) {
+      const [, serviceCity] = path.match(/^\/(.+)\/$/);
+      onNavigate(serviceCity);
+    }
+  };
   // Add breathing animation CSS and background movement
   const styles = `
     @keyframes breathingGlow {
@@ -129,11 +140,11 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Family Photography</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/family-photography/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/family-photography/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/family-photography/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/family-photography/emmaus-pa/" className="hover:text-white transition-colors">Emmaus, PA</a></li>
-                  <li><a href="/family-photography/macungie-pa/" className="hover:text-white transition-colors">Macungie, PA</a></li>
+                  <li><a href="/family-photography/bethlehem-pa/" onClick={(e) => handleSEOClick(e, '/family-photography/bethlehem-pa/')} className="hover:text-white transition-colors cursor-pointer">Bethlehem, PA</a></li>
+                  <li><a href="/family-photography/easton-pa/" onClick={(e) => handleSEOClick(e, '/family-photography/easton-pa/')} className="hover:text-white transition-colors cursor-pointer">Easton, PA</a></li>
+                  <li><a href="/family-photography/whitehall-pa/" onClick={(e) => handleSEOClick(e, '/family-photography/whitehall-pa/')} className="hover:text-white transition-colors cursor-pointer">Whitehall, PA</a></li>
+                  <li><a href="/family-photography/emmaus-pa/" onClick={(e) => handleSEOClick(e, '/family-photography/emmaus-pa/')} className="hover:text-white transition-colors cursor-pointer">Emmaus, PA</a></li>
+                  <li><a href="/family-photography/macungie-pa/" onClick={(e) => handleSEOClick(e, '/family-photography/macungie-pa/')} className="hover:text-white transition-colors cursor-pointer">Macungie, PA</a></li>
                 </ul>
               </div>
 
@@ -141,11 +152,11 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">Maternity & Newborn</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/maternity-newborn-photographer/bethlehem-pa/" className="hover:text-white transition-colors">Bethlehem, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/easton-pa/" className="hover:text-white transition-colors">Easton, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/whitehall-pa/" className="hover:text-white transition-colors">Whitehall, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/nazareth-pa/" className="hover:text-white transition-colors">Nazareth, PA</a></li>
-                  <li><a href="/maternity-newborn-photographer/hellertown-pa/" className="hover:text-white transition-colors">Hellertown, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/bethlehem-pa/" onClick={(e) => handleSEOClick(e, '/maternity-newborn-photographer/bethlehem-pa/')} className="hover:text-white transition-colors cursor-pointer">Bethlehem, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/easton-pa/" onClick={(e) => handleSEOClick(e, '/maternity-newborn-photographer/easton-pa/')} className="hover:text-white transition-colors cursor-pointer">Easton, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/whitehall-pa/" onClick={(e) => handleSEOClick(e, '/maternity-newborn-photographer/whitehall-pa/')} className="hover:text-white transition-colors cursor-pointer">Whitehall, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/nazareth-pa/" onClick={(e) => handleSEOClick(e, '/maternity-newborn-photographer/nazareth-pa/')} className="hover:text-white transition-colors cursor-pointer">Nazareth, PA</a></li>
+                  <li><a href="/maternity-newborn-photographer/hellertown-pa/" onClick={(e) => handleSEOClick(e, '/maternity-newborn-photographer/hellertown-pa/')} className="hover:text-white transition-colors cursor-pointer">Hellertown, PA</a></li>
                 </ul>
               </div>
 
@@ -153,10 +164,10 @@ const Footer = ({ onAdminClick }) => {
               <div>
                 <h3 className="font-semibold text-white mb-3">More Services</h3>
                 <ul className="space-y-1 text-white/80">
-                  <li><a href="/senior-portraits/bethlehem-pa/" className="hover:text-white transition-colors">Senior Portraits</a></li>
-                  <li><a href="/engagement-photography/bethlehem-pa/" className="hover:text-white transition-colors">Engagement Photos</a></li>
-                  <li><a href="/mini-session-photography/bethlehem-pa/" className="hover:text-white transition-colors">Mini Sessions</a></li>
-                  <li><a href="/professional-headshots/bethlehem-pa/" className="hover:text-white transition-colors">Professional Headshots</a></li>
+                  <li><a href="/senior-portraits/bethlehem-pa/" onClick={(e) => handleSEOClick(e, '/senior-portraits/bethlehem-pa/')} className="hover:text-white transition-colors cursor-pointer">Senior Portraits</a></li>
+                  <li><a href="/engagement-photography/bethlehem-pa/" onClick={(e) => handleSEOClick(e, '/engagement-photography/bethlehem-pa/')} className="hover:text-white transition-colors cursor-pointer">Engagement Photos</a></li>
+                  <li><a href="/mini-session-photography/bethlehem-pa/" onClick={(e) => handleSEOClick(e, '/mini-session-photography/bethlehem-pa/')} className="hover:text-white transition-colors cursor-pointer">Mini Sessions</a></li>
+                  <li><a href="/professional-headshots/bethlehem-pa/" onClick={(e) => handleSEOClick(e, '/professional-headshots/bethlehem-pa/')} className="hover:text-white transition-colors cursor-pointer">Professional Headshots</a></li>
                 </ul>
               </div>
             </div>
